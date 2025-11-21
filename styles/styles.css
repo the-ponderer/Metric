@@ -521,14 +521,14 @@ footer {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        gap: 20px;
+        gap: 10px;
         flex-wrap: nowrap;
         text-align: center;
     }
 
     .footer-nav a {
         white-space: nowrap; /* чтобы длинные слова не переносились */
-        font-size: 16px; /* можешь уменьшить, если не влезает */
+        font-size: 12px; /* можешь уменьшить, если не влезает */
     }
 }
 
