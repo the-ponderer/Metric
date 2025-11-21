@@ -524,6 +524,9 @@ footer {
         gap: 10px;
         flex-wrap: nowrap;
         text-align: center;
+
+        padding-left: 16px;   /* вместо margin только у первой ссылки */
+        padding-right: 16px;  /* можно чуть добавить справа для симметрии */
     }
 
     .footer-nav a {
@@ -531,9 +534,6 @@ footer {
         font-size: 12px; /* можешь уменьшить, если не влезает */
     }
 
-    .footer-nav a:first-child {
-        margin-left: 8px;
-    }
 
 }
 
