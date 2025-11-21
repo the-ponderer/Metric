@@ -530,6 +530,11 @@ footer {
         white-space: nowrap; /* чтобы длинные слова не переносились */
         font-size: 12px; /* можешь уменьшить, если не влезает */
     }
+
+    .footer-nav a:first-child {
+        margin-left: 8px;
+    }
+
 }
 
 /* ===== МОБИЛЬНАЯ ШАПКА ===== */
