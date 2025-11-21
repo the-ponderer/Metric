@@ -505,9 +505,9 @@ footer {
     position: absolute;
     left: -70px;
     right: 24px;
-    bottom: 80px;      /* поднимаем над краем, чтобы не прилипал */
+    bottom: 90px;      /* поднимаем над краем, чтобы не прилипал */
 
-    font-size: 30px;
+    font-size: 25px;
     line-height: 40px;
     }
 
