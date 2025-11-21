@@ -9,26 +9,31 @@ body {
 
 .logo__link {
     display: inline-block;
-    margin-right: 440px;
+    margin-right: 0;                /* убираем костыль с 440px */
 }
 
 .logo {
     display: block;
 }
 
+
 .nav-section {
-    min-width: 1150px;
-    width: 1150px;
-    margin: auto;
+    max-width: 1150px;      /* фикс-ширину заменили на максимум */
+    width: 100%;            /* пусть занимает всю доступную ширину */
+    margin: 33px auto 30px; /* сверху 33, снизу 30, центр по горизонтали */
+    padding: 0 15px;        /* небольшой внутренний отступ, чтобы контент
+                               не прилипал к краям на маленьких экранах */
 }
 
 .nav-container {
-    width: 1150px;
-    margin-top: 33px;
+    display: flex;                  /* ставим логотип и меню в одну линию */
+    align-items: center;
+    justify-content: space-between; /* логотип слева, меню справа */
+    margin-top: 0;                  /* этот отступ уже есть у .nav-section */
 }
 
 .nav {
-    display: inline-block;
+    display: flex;
 }
 .nav__link {
     margin-left: 60px;
@@ -43,18 +48,94 @@ body {
 }
 
 section {
-    padding-top: 128px;
-    width: 1150px;
-    margin: auto;
+    max-width: 1150px;
+    width: 100%;
+    margin: 0 auto;
 }
 
-h1 {
-    width: 990px;
-    text-align: left;
-    font-size: 60px;
+.hero {
+    margin-top: 80px;   /* расстояние под шапкой */
+    margin-bottom: 100px;
+}
+
+.about {
+    margin-top: 120px;  /* расстояние между блоками */
+}
+
+/* --- ABOUT (первый блок) --- */
+
+#About h1 {
+    font-size: 54px;
+    line-height: 1.2;
     font-weight: 400;
-    line-height: 60px;
+    margin-bottom: 40px;
+}
+
+/* ⬇️ вот сюда вставляешь корректировку отступов */
+
+#About h1 {
+    margin-top: 30px;
+}
+
+#About .img1 {
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+#About h2 {
+    margin-top: 60px;
+    margin-bottom: 20px;
+}
+
+/* Проекты — общий контейнер секции */
+#Projects {
+    max-width: 1150px;      /* ширина контента как в hero / About */
+    width: 100%;
+    margin: 120px auto 120px;/* сверху и снизу по 120px, по центру */
+    padding: 0 15px;        /* небольшой внутренний отступ по бокам */
+}
+
+#Projects h2 {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 25px;
     margin-bottom: 30px;
+}
+
+/* каждая карточка проекта */
+#Projects .project {
+    margin-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* картинки в карточках проектов */
+#Projects .project img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Не трогаем кнопку "Подробнее" */
+#Projects .project .more img {
+    width: auto !important;
+    height: auto !important;
+    display: inline-block !important;
+    object-fit: contain !important;
+}
+
+/* исключение для маленькой кнопки "Подробнее" */
+.more img {
+    width: auto;
+    height: auto;
+    display: inline;
+}
+
+/* Отступ сверху только у секций после первой */
+main > section:not(:first-of-type) {
+    padding-top: 128px;
 }
 
 h2 {
@@ -130,7 +211,8 @@ h3 {
 
 .a2 {
     display: block;
-    width: 100%;
+    max-width: 1150px;
+    margin: 0 auto 160px;
     height: 153px;
     line-height: 153px;
     border: 1px solid #AD1818;
@@ -204,7 +286,7 @@ h4 {
     padding-bottom: 150px;
 }
 
-.phone-before::before {
+.phone-before:before {
     content: "";
     display: block;
     margin-bottom: 12px;
@@ -260,4 +342,133 @@ footer {
     text-align: center;
     margin-top: 87px;
     color: #535353;
+}
+
+
+/* Главный контейнер сайта */
+.container {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+@media (max-width: 1199px) {
+    section {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    main > section:not(:first-of-type) {
+        padding-top: 128px;
+    }
+
+    .img1 {
+        width: 100%;
+        background-size: cover;
+        background-position: 50%;
+    }
+
+    .p1 {
+        width: 40%;
+        font-size: 15px;
+        line-height: 27.32px;
+        left: 30px;
+    }
+    .p2 {
+        font-size: 35px;
+        line-height: 50px;
+    }
+    .img_c3 {
+        width: 100%;
+    }
+} 
+
+/*
+@media (max-width: 767px) {
+    section {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    main > section:not(:first-of-type) {
+        padding-top: 128px;
+    }
+
+    .img1 {
+        width: 100%;
+        background-size: cover;
+        background-position: 50%;
+    }
+
+
+    .p1 {
+        font-size: 16px;
+        line-height: 20px;
+        bottom: 15px;
+        left: 15px;
+    }
+
+    .p2 {
+        font-size: 20px;
+        line-height: 30px;
+    }
+    h3 {
+        font-size: 18px;
+        line-height: 25px;
+        margin-bottom: 15px;
+    }
+    .a1 {
+        width: 100%;
+        text-align: center;
+    }
+    .a2 {
+        height: 100px;
+        line-height: 100px;
+    }
+} */
+
+@media (max-width: 767px) {
+
+    section {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    main > section:not(:first-of-type) {
+        padding-top: 128px;
+    }
+
+    .img1 {
+        width: 100%;
+        background-size: cover;
+        background-position: 50%;
+    }
+
+    .p1 {
+        font-size: 16px;
+        line-height: 20px;
+        bottom: 15px;
+        left: 15px;
+    }
+
+    .p2 {
+        font-size: 20px;
+        line-height: 30px;
+    }
+
+    h3 {
+        font-size: 18px;
+        line-height: 25px;
+        margin-bottom: 15px;
+    }
+
+    .a1 {
+        width: 100%;
+        text-align: center;
+    }
+
+    .a2 {
+        height: 100px;
+        line-height: 100px;
+    }
 }
