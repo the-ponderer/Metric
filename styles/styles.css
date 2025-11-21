@@ -7,6 +7,12 @@ body {
     
 }
 
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden; /* убираем горизонтальный скролл и белые поля справа */
+}
+
 .logo__link {
     display: inline-block;
     margin-right: 0;                /* убираем костыль с 440px */
@@ -428,47 +434,198 @@ footer {
 } */
 
 @media (max-width: 767px) {
-
-    section {
-        width: 100%;
-        margin: 0 auto;
+    /* базовая типографика и отступы */
+    body {
+        font-size: 16px;
     }
 
-    main > section:not(:first-of-type) {
-        padding-top: 128px;
+    main {
+        padding-top: 40px;
+    }
+
+    /* шапка */
+    .nav-container {
+        width: 100%;
+        padding: 16px 20px 24px;
+        box-sizing: border-box;
+    }
+
+    .nav {
+        gap: 16px;
+    }
+
+    .nav__link {
+        margin-left: 0;
+        font-size: 14px;
+    }
+
+    /* все секции делаем на всю ширину экрана */
+    section {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+
+    /* герой-блок */
+    #About > section:first-of-type {
+        padding-bottom: 32px;
+    }
+
+    h1 {
+        font-size: 32px;
+        line-height: 1.1;
+        margin-bottom: 24px;
     }
 
     .img1 {
         width: 100%;
+        height: auto;
+        min-height: 260px;
         background-size: cover;
-        background-position: 50%;
+        background-position: 50% 50%;
     }
 
     .p1 {
-        font-size: 16px;
-        line-height: 20px;
-        bottom: 15px;
-        left: 15px;
+        font-size: 14px;
+        line-height: 18px;
+        bottom: 16px;
+        left: 16px;
+        right: 16px;
+    }
+
+    /* блок "О нас" */
+    #About h2 {
+        font-size: 20px;
+        margin-bottom: 16px;
     }
 
     .p2 {
-        font-size: 20px;
-        line-height: 30px;
-    }
-
-    h3 {
-        font-size: 18px;
-        line-height: 25px;
-        margin-bottom: 15px;
+        font-size: 14px;
+        line-height: 20px;
+        margin-bottom: 24px;
     }
 
     .a1 {
         width: 100%;
         text-align: center;
+        display: inline-block;
     }
 
-    .a2 {
-        height: 100px;
-        line-height: 100px;
+    /* ПРОЕКТЫ */
+
+    #Projects {
+        padding-top: 56px;
+    }
+
+    #Projects .section2 {
+        padding: 0;
+        margin-bottom: 48px;
+    }
+
+    #Projects .section2 img {
+        display: block;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    /* маленькая картинка "Подробнее →" — НЕ растягиваем */
+    #Projects .more img {
+        width: auto;
+        height: 24px;
+    }
+
+    /* кнопка "Смотреть все проекты" */
+    .a3 {
+        display: block;
+        width: 100%;
+        margin: 8px 0 64px;
+        text-align: center;
+    }
+
+    .a3 img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    /* УСЛУГИ (чёрный блок) */
+
+    .black_container {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        padding: 56px 0 56px;
+    }
+
+    #Services {
+        padding: 0 20px 32px;
+    }
+
+    #Services h3,
+    #Services h4,
+    #Services h5,
+    #Services h6 {
+        margin-bottom: 16px;
+    }
+
+    .section3,
+    .section4,
+    .section5,
+    .section6 {
+        width: 100%;
+        max-width: 100%;
+        padding: 0 20px 40px;
+        box-sizing: border-box;
+    }
+
+    /* блок с последним проектом (большая фотка внизу перед контактами) */
+    .container_project2,
+    .container_project2 img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    /* КОНТАКТЫ */
+
+    #Contacts {
+        padding-top: 64px;
+        padding-bottom: 64px;
+    }
+
+    #Contacts h2 {
+        font-size: 20px;
+        margin-bottom: 16px;
+    }
+
+    #Contacts p,
+    #Contacts a {
+        font-size: 16px;
+    }
+
+    /* футер */
+
+    footer {
+        padding: 32px 20px 24px;
+    }
+
+    .footer_nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 16px;
+        margin-bottom: 24px;
+    }
+
+    .footer_nav a {
+        font-size: 12px;
+    }
+
+    .footer__info {
+        font-size: 10px;
     }
 }
