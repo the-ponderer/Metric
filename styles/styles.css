@@ -408,9 +408,8 @@ footer {
 
     /* ABOUT */
     #About {
-        margin-top: -50px;
     /*    padding-top: 40px;*/
-        padding-top: 0 !important;
+        padding-top: -90 !important;
     }
 
     #About section:first-of-type {
