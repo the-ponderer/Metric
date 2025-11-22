@@ -460,6 +460,7 @@ footer {
     /* ПРОЕКТЫ */
     #Projects {
         padding-top: 60px;
+        padding-bottom: -140px;
     }
 
     #Projects .project {
