@@ -479,8 +479,8 @@ footer {
 
     /* Услуги: чёрный блок на всю ширину, карточки одна под другой */
     .black_container {
-        margin-top: -140px;
-        padding-top: -100px;
+        margin-top: 0;
+        padding-top: 0;
         padding: 60px 20px;
     }
 
@@ -580,7 +580,7 @@ footer {
 
     .about {
         margin-top: 0;
-}
+    }
 
     /* Заголовки секций (О нас, Проекты, Услуги) — поменьше отступ сверху */
     h2 {
@@ -588,6 +588,9 @@ footer {
         margin-bottom: 20px;
     }
 
+    .a2 {
+        margin: 0;
+    }
     /* Чёрный блок с услугами — убираем огромный разрыв под кнопкой
         "Смотреть все проекты" */
     .black_container {
